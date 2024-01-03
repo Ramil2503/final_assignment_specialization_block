@@ -2,11 +2,12 @@ package controller;
 
 import java.util.Scanner;
 
-import view.View;
+import model.AnimalType;
+//import view.View;
 import view.ConsoleUI;
 
 public class Controller {
-    View view = new ConsoleUI();
+    ConsoleUI view = new ConsoleUI();
     Scanner scanner = new Scanner(System.in);
 
     public void start() {
@@ -21,6 +22,7 @@ public class Controller {
                     4. Exit
                     """);
             choice = scanner.nextInt();
+            scanner.nextLine();
             if (choice > 4 || choice < 0) {
                 view.print("Enter right choice please (between 1 - 4)");
             } else {
@@ -29,7 +31,7 @@ public class Controller {
         }
         switch(choice) {
             case 1:
-                addNewAnimal();
+                view.addNewAnimal();
                 break;
             case 2:
                 seeAllAnimals();
@@ -43,8 +45,8 @@ public class Controller {
         }
     }
 
-    public void addNewAnimal() {
-
+    public void addNewAnimal(String name, AnimalType animalType, String commands) {
+        
     }
 
     public void seeAllAnimals() {
